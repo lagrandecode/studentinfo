@@ -15,9 +15,10 @@
 
     <div class = col-sm-8>
         <h4 class = "text-center alert alert-info">Student Info</h4>
-        {% for student in api %}
 
 
+<!-- 
+        {% for st in api %}
 
         <table class="table">
             <thead>
@@ -31,16 +32,31 @@
             </thead>
             <tbody class="table-group-divider">
               <tr>
-                <td>{{student.first_name}}</td>
-                <td>{{student.last_name}}</td>
-                <td>{{student.school_class}}</td>
-                <td>{{student.gender}}</td>
-                <td>{{student.age}}</td>
+                <td>{{ st.first_name }}</td>
+                <td>{{ st.last_name }}</td>
+                <td>{{ st.school_class }}</td>
+                <td>{{ st.gender }}</td>
+                <td>{{ st.age }}</td>
               </tr>
             </tbody>
           </table>
+
+          {% endfor %} -->
+
+          {% for st in api %}
+
+          {{st.first_name}}
+
+
+          {% endfor %}
+
+
+
+
+
           
-        {% endfor %}
+          
+
 
     </div>
 </div>

@@ -94,6 +94,7 @@ def addStudent(request):
 
 def showstudent(request):
     # Define the API token and URL
+    import json
     api_token = '6fb29d8015dc136cba3558590282ddab7f2b24a5'
     api_url = 'https://kc.kobotoolbox.org/api/v1/data/1635156?format=json'
 
@@ -107,13 +108,13 @@ def showstudent(request):
 
     # Check if the request was successful
     if response.status_code == 200:
-        api_data = json.loads(response.content)
+        api = json.loads(response.content)
         context = {
-            'api': api_data
+            'api': api
         }
         print(response.content)
-        return render(request, 'addstudent.html', context)
+        return render(request, 'addatudent.html', context)
     else:
         # Handle the case where the request was not successful
         error_message = 'Failed to retrieve data from the API.'
-        return render(request, 'addstudent.html', {'error_message': error_message})
+        return render(request, 'addstudent.html',context)
