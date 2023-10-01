@@ -14,9 +14,6 @@ from django.contrib import messages
 
 
 
-
-
-
 BASE_URL = 'https://kc.kobotoolbox.org'
 SUMISSION_URL = f'{BASE_URL}/api/v1/submissions'
 TOKEN = '6fb29d8015dc136cba3558590282ddab7f2b24a5'
@@ -90,3 +87,24 @@ def addStudent(request):
         studentform = StudentForm()
 
     return render(request, 'addstudent.html', {'form': studentform, 'success': success, 'error': error})
+
+
+
+#fetch api to display the data on the table 
+
+def showstudent(request):
+    import json
+    import requests
+
+    header = {
+    "Authorization": "Token 6fb29d8015dc136cba3558590282ddab7f2b24a5"
+    }
+    response = requests.get('https://kc.kobotoolbox.org/api/v1/data/1635156?format=json',
+    headers=header,auth=("ogunmolu_oluwaseun","08078011943"))
+    print(response.content)
+    api = json.loads(response.content)
+    context = {
+        'api':api
+    }
+    print(response.json)
+    return render(request,'addstudent.html',context)
