@@ -113,7 +113,7 @@ def showstudent(request):
             'api': api
         }
         print(response.content)
-        return render(request, 'addatudent.html', context)
+        return render(request, 'addstudent.html', context)
     else:
         # Handle the case where the request was not successful
         error_message = 'Failed to retrieve data from the API.'
