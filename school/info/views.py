@@ -11,7 +11,7 @@ from django.contrib import messages
 
 # Create your views here.
 
-
+# This view helps you to send data over the internet to Kobotoolbox backend
 
 
 BASE_URL = 'https://kc.kobotoolbox.org'
@@ -22,8 +22,6 @@ TOKEN = '6fb29d8015dc136cba3558590282ddab7f2b24a5'
 
 def format_openrosa_datetime():
     return datetime.now().isoformat('T', 'milliseconds')
-
-
 def create_xml_submission(data, _uuid):
     xml_data = f'''
     <aKH8BtV5L6AqYcJ4SJFdYP id="aKH8BtV5L6AqYcJ4SJFdYP" version="1 ({datetime.now():%Y-%m-%d %H:%M:%S})">
@@ -38,8 +36,6 @@ def create_xml_submission(data, _uuid):
         <school_class>{data['school_class']}</school_class>
         <gender>{data['gender']}</gender>
         <age>{data['age']}</age>
-
-
         <__version__>vM2s7ZM7a5E9eH3moaqZRE</__version__>
         <meta>
             <instanceID>uuid:{_uuid}</instanceID>
@@ -51,7 +47,6 @@ def create_xml_submission(data, _uuid):
 def addStudent(request):
     success = None  # Initialize the success variable
     error = None  # Initialize the error variable
-
     if request.method == 'POST':
         studentform = StudentForm(request.POST)
         if studentform.is_valid():
@@ -70,7 +65,6 @@ def addStudent(request):
                 'gender': gender,
                 'age': age,
             }
-
             file_tuple = (_uuid, io.BytesIO(create_xml_submission(data, _uuid)))
             files = {'xml_submission_file': file_tuple}
             headers = {'Authorization': f'Token {TOKEN}'}
@@ -82,14 +76,12 @@ def addStudent(request):
                 error = 'error'
                 messages.error(request, 'Something went wrong')
             studentform = StudentForm()
-
     else:
         studentform = StudentForm()
-
     return render(request, 'addstudent.html', {'form': studentform, 'success': success, 'error': error})
 
 
-
+# This view helps you to fetch the data from kobotoolbox backend to web interface
 #fetch api to display the data on the table 
 
 def showstudent(request):
