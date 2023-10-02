@@ -17,4 +17,6 @@ Upon submission from the web portal, the data will become visible within the Kob
 # Kobotoolbox API Interface 
 KoboToolbox offers an interactive API that simplifies the process of performing Create, Read, Update, and Delete (CRUD) operations, providing users with a user-friendly experience for managing data.
 
+![image](https://github.com/lagrandecode/studentinfo/assets/58033364/6bedb0d9-2b4b-4a26-86f2-78a768290d82)
+
 
