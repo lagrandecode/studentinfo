@@ -13,3 +13,8 @@ This project demonstrates the process of transmitting data via the internet by u
 Upon submission from the web portal, the data will become visible within the KoboToolbox interface, allowing you to review the submissions.
 
 ![image](https://github.com/lagrandecode/studentinfo/assets/58033364/d3f1b371-3e81-4857-9b31-401f778f8cc8)
+
+# Kobotoolbox API Interface 
+KoboToolbox offers an interactive API that simplifies the process of performing Create, Read, Update, and Delete (CRUD) operations, providing users with a user-friendly experience for managing data.
+
+
