@@ -1,11 +1,38 @@
+{% extends 'home.html' %}
+
+{% block content %}
+
+<div class = col>
+    <h4 class = "text-center alert alert-info">Student Information</h4>
+    <a href="https://kf.kobotoolbox.org/api/v2/assets/aKH8BtV5L6AqYcJ4SJFdYP/export-settings/esEWyF2bToBreNrRYQQPgxJ/data.xlsx"><h4 class = "text-center alert alert-info">Download Student Information</h4></a>
 
 
 
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">First</th>
+            <th scope="col">Last</th>
+            <th scope="col">Class</th>
+            <th scope="col">Gender</th>
+            <th scope="col">Age</th>
+          </tr>
+        </thead>
+        <tbody class="table-group-divider">
+          {% for st in api %}
+          <tr>
+            <td>{{ st.first_name }}</td>
+            <td>{{ st.last_name }}</td>
+            <td>{{ st.school_class }}</td>
+            <td>{{ st.gender }}</td>
+            <td>{{ st.age }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+          
 
 
-{% for st in api %}
+</div>
 
-{{st.first_name}}
-
-
-{% endfor %}
+{% endblock content %}

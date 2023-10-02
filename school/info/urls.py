@@ -10,5 +10,5 @@ from . import views
 
 urlpatterns = [
     path('',views.addStudent,name='home'),
-    path('',views.showstudent)
+    path('show/', views.showstudent, name='show'),
 ] + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)

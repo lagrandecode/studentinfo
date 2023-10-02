@@ -2,63 +2,23 @@
 {% block content %}
 
 <div class="row">
-    <div class="col-sm-4">
+    <div class="col">
         <h4 class="text-center alert alert-info fs-5">Add New Student</h4>
-        <form action="" method="POST">
+        <form action="/" method="POST">
         {% csrf_token %}
         {{form.as_p}}
+        <div class="row text-center">
             <input class="btn btn-success" type="submit" value="Submit">
+        </div>
         </form>
+        <div class="row text-center">
+            <a href="{% url 'show' %}">View Student Info</a>
+        </div>
     </div>
     <br>
     <br>
 
-    <div class = col-sm-8>
-        <h4 class = "text-center alert alert-info">Student Info</h4>
 
-
-<!-- 
-        {% for st in api %}
-
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">class</th>
-                <th scope="col">gender</th>
-                <th scope="col">age</th>
-              </tr>
-            </thead>
-            <tbody class="table-group-divider">
-              <tr>
-                <td>{{ st.first_name }}</td>
-                <td>{{ st.last_name }}</td>
-                <td>{{ st.school_class }}</td>
-                <td>{{ st.gender }}</td>
-                <td>{{ st.age }}</td>
-              </tr>
-            </tbody>
-          </table>
-
-          {% endfor %} -->
-
-          {% for st in api %}
-
-          {{st.first_name}}
-
-
-          {% endfor %}
-
-
-
-
-
-          
-          
-
-
-    </div>
 </div>
 
 
