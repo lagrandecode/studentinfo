@@ -8,7 +8,7 @@ This project demonstrates the process of transmitting data via the internet by u
 ![image](https://github.com/lagrandecode/studentinfo/assets/58033364/13ff7ae2-80f4-4d37-8c14-deea9b1bdb1a)
 
 
-#Kobotoolbox Interface 
+# Kobotoolbox Interface 
 
 Upon submission from the web portal, the data will become visible within the KoboToolbox interface, allowing you to review the submissions.
 
