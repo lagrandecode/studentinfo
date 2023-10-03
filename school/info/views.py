@@ -110,3 +110,8 @@ def showstudent(request):
         # Handle the case where the request was not successful
         error_message = 'Failed to retrieve data from the API.'
         return render(request, 'show.html',context)
+
+
+
+
+  
